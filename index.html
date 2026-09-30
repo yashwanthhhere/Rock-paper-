@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors</title>
+    <meta name="theme-color" content="#000000">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="game-container">
+
+        <header class="game-header">
+            <p class="eyebrow">ARCADE <span>·</span> 01</p>
+            <h1>Rock Paper Scissors</h1>
+            <p class="subtitle">A quick match against the computer.</p>
+        </header>
+
+        <section class="score-board" aria-label="Score">
+            <div class="score-item">
+                <span class="score-label">YOU</span>
+                <strong id="playerScore">0</strong>
+            </div>
+
+            <span class="score-divider" aria-hidden="true"></span>
+
+            <div class="score-item">
+                <span class="score-label">COMPUTER</span>
+                <strong id="computerScore">0</strong>
+            </div>
+        </section>
+
+        <section class="play-area" aria-label="Choose your move">
+            <p class="section-label">MAKE YOUR MOVE</p>
+
+            <div class="choices">
+                <button class="choice-button" type="button" data-choice="rock" aria-label="Choose rock">
+                    <span class="choice-icon" aria-hidden="true">🪨</span>
+                    <span>Rock</span>
+                </button>
+                <button class="choice-button" type="button" data-choice="paper" aria-label="Choose paper">
+                    <span class="choice-icon" aria-hidden="true">📄</span>
+                    <span>Paper</span>
+                </button>
+                <button class="choice-button" type="button" data-choice="scissors" aria-label="Choose scissors">
+                    <span class="choice-icon" aria-hidden="true">✂️</span>
+                    <span>Scissors</span>
+                </button>
+            </div>
+        </section>
+
+        <section class="round-area" aria-label="Round result">
+            <h2 id="result" role="status" aria-live="polite">Choose your move!</h2>
+            <div class="moves" aria-live="polite">
+            <div class="move-card">
+                <span class="move-label">Your choice</span>
+                <span id="playerChoice">-</span>
+            </div>
+            <div class="move-card">
+                <span class="move-label">Computer's choice</span>
+                <span id="computerChoice">-</span>
+            </div>
+            </div>
+        </section>
+
+        <button class="reset-button" type="button" data-reset>
+            Reset score
+        </button>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
