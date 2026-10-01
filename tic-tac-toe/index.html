@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#10151f">
+  <title>Tic-Tac-Toe | Play a round</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="game-shell">
+    <header class="game-header">
+      <p class="eyebrow">THE CLASSIC, REIMAGINED</p>
+      <h1>Tic-Tac-Toe<span class="title-dot">.</span></h1>
+      <p class="subtitle">A little friendly competition.</p>
+    </header>
+
+    <section class="scoreboard" aria-label="Scoreboard">
+      <article class="score-card score-x" id="player-x-card">
+        <span class="player-symbol" aria-hidden="true">×</span>
+        <span class="player-name">Player X</span>
+        <span class="score" id="score-x" aria-label="Player X score">0</span>
+      </article>
+      <article class="score-card score-draw">
+        <span class="player-name">Draws</span>
+        <span class="score" id="score-draw" aria-label="Number of draws">0</span>
+      </article>
+      <article class="score-card score-o" id="player-o-card">
+        <span class="player-symbol" aria-hidden="true">○</span>
+        <span class="player-name">Player O</span>
+        <span class="score" id="score-o" aria-label="Player O score">0</span>
+      </article>
+    </section>
+
+    <section class="game-panel" aria-label="Tic-Tac-Toe game">
+      <div class="turn-row">
+        <p id="game-status" class="game-status" aria-live="polite">Player X's turn</p>
+        <span class="round-label">3 × 3 BOARD</span>
+      </div>
+
+      <div class="board" role="group" aria-label="Game board">
+        <button class="cell" type="button" data-cell="0" aria-label="Row 1, column 1"></button>
+        <button class="cell" type="button" data-cell="1" aria-label="Row 1, column 2"></button>
+        <button class="cell" type="button" data-cell="2" aria-label="Row 1, column 3"></button>
+        <button class="cell" type="button" data-cell="3" aria-label="Row 2, column 1"></button>
+        <button class="cell" type="button" data-cell="4" aria-label="Row 2, column 2"></button>
+        <button class="cell" type="button" data-cell="5" aria-label="Row 2, column 3"></button>
+        <button class="cell" type="button" data-cell="6" aria-label="Row 3, column 1"></button>
+        <button class="cell" type="button" data-cell="7" aria-label="Row 3, column 2"></button>
+        <button class="cell" type="button" data-cell="8" aria-label="Row 3, column 3"></button>
+      </div>
+
+      <div class="game-actions">
+        <button class="button button-primary" id="new-round" type="button">New round <span aria-hidden="true">↗</span></button>
+        <button class="button button-secondary" id="reset-scores" type="button">Reset scores</button>
+      </div>
+    </section>
+
+    <footer class="game-footer">
+      <span>Take turns. Get three in a row.</span>
+      <span class="footer-mark"><span aria-hidden="true">●</span> TWO PLAYERS</span>
+    </footer>
+  </main>
+
+  <dialog class="winner-dialog" id="winner-dialog" aria-labelledby="winner-title" aria-describedby="winner-message">
+    <div class="confetti" aria-hidden="true">
+      <span></span><span></span><span></span><span></span><span></span><span></span>
+      <span></span><span></span><span></span><span></span><span></span><span></span>
+    </div>
+    <div class="celebration-face" aria-hidden="true">🥳</div>
+    <span class="winner-badge" id="winner-symbol" aria-hidden="true">×</span>
+    <p class="eyebrow">ROUND COMPLETE</p>
+    <h2 id="winner-title">You did it!</h2>
+    <p class="winner-message" id="winner-message"></p>
+    <button class="button button-primary" id="dialog-new-round" type="button">Next round <span aria-hidden="true">↗</span></button>
+  </dialog>
+</body>
+</html>
